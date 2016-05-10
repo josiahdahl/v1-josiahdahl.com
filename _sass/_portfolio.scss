@@ -1,0 +1,56 @@
+.portfolio-title {
+  font-size: 1.8rem;
+  @media #{$medium-and-up} {
+    font-size: 2.5rem;
+  }
+}
+.portfolio-links {
+  text-align: center;
+}
+.portfolio-link {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  @media #{$medium-and-up} {
+    width: 30%;
+  }
+}
+.portfolio-link + .portfolio-link {
+  margin-left: 1rem;
+}
+
+.portfolio-imagewrap {
+  width: 100%;
+  overflow: hidden;
+  @media #{$large-and-up} {
+    max-height: 350px;
+  }
+}
+.portfolio-image {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.portfolio-text {
+  @extend .flow-text;
+}
+
+.portfolio-techlist {
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-techlistitem {
+  display: inline-block;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+  color: $primary-color-dark;
+
+}
+
+.portfolio-techlistitem + .portfolio-techlistitem {
+  margin-left: 1rem;
+}

@@ -1,0 +1,53 @@
+---
+layout: page
+title: Portfolio
+permalink: /portfolio/
+---
+
+<div class="home">
+
+  <!--<ul class="post-list">-->
+  <!--{% for post in site.posts %}-->
+  <!--<li>-->
+  <!--<span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>-->
+
+  <!--<h2>-->
+  <!--<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>-->
+  <!--</h2>-->
+  <!--</li>-->
+  <!--{% endfor %}-->
+  <!--</ul>-->
+  <div class="projects row">
+    {% for project in site.portfolio %}
+    <div class="project col s12 m12 l6">
+      <div class="project-card card">
+        <a href="{{project.url | prepend: site.baseurl }}">
+          <div class="portfolio-imagewrap">
+
+            <div class="card-image">
+              <img src="{{ '/assets/portfolio/card/' | prepend: site.baseurl | append: project.picture }} ">
+            </div>
+          </div>
+          <span class="project-title card-title">{{ project.title }}</span>
+        </a>
+        <div class="project-excerpt card-content">
+          {{ project.excerpt }}
+          <div class="project-tools">
+            {% for tool in project.tools %}
+            <div class="chip">{{ tool }}</div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="card-action">
+          <a href="{{project.url | prepend: site.baseurl }}">More Info</a>
+          <a href="{{project.github}}">Github</a>
+          <a href="{{project.siteurl}}">Visit</a>
+
+        </div>
+
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
