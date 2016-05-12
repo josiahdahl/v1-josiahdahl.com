@@ -109,3 +109,14 @@
   }
 
 }
+button.btn_inline {
+  display: inline-block;
+}
+.form-successcontainer {
+  display: inline-block;
+}
+.form-success {
+  display: none;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}

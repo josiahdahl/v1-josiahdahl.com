@@ -16795,9 +16795,6 @@ $(document).ready(function () {
 
   // handle form validation
   $('#contact').on('submit', function (e) {
-
-    var payload = {};
-
     console.log('checksubmitted');
     e.preventDefault();
     var error = false;
@@ -16807,7 +16804,6 @@ $(document).ready(function () {
 
     reqFields.forEach(function(value, index) {
       var el = $(value);
-      console.log(el.val());
       if (el.val() == '') {
         el.parent().addClass('form-error');
         error = true;
@@ -16816,7 +16812,6 @@ $(document).ready(function () {
         // From http://emailregex.com/
         var emailRegex = /.+@.+/i;
         var validEmail = emailRegex.test(el.val());
-        console.log(validEmail);
         if (!validEmail) {
           el.parent().addClass('form-error');
 
@@ -16824,7 +16819,6 @@ $(document).ready(function () {
         }
       }
     });
-    console.log($('#contact').serializeArray());
     if (!error) {
       $.ajax({
         url: "https://formspree.io/josiah.dahl+contact@gmail.com",
@@ -16832,43 +16826,9 @@ $(document).ready(function () {
         data: $(this).serializeArray(),
         dataType: "json"
       });
-      console.log('submitted');
+      document.getElementById('contact').reset();
+      $('.form-success').fadeIn();
     }
-    // Get required elements
-    // var reqFields = $('.input-field.required');
-    // console.log(reqFields);
-    // reqFields.each(function() {
-    //   console.log('in field');
-    //   // get input type
-    //   if ($(this).children('input[name=name]')) {
-    //     console.log($(this).children('input[name=name]'));
-    //     if ($(this).children('input[name=name]').val() == '') {
-    //       $(this).addClass('form-error');
-    //       error = true;
-    //     }
-    //
-    //   }
-    //   else if ($(this).children('input[name=email]')) {
-    //     var emailRegex = '^[^@]+@[^@]+\.[^@]+$';
-    //     var email = $(this).children('input[name=email]');
-    //     if (email.val() == '') {
-    //       $(this).addClass('form-error');
-    //       error = true;
-    //     }
-    //     var validEmail = emailRegex.exec(email.val());
-    //     if (!validEmail) {
-    //       $(this).addClass('form-error');
-    //       error = true;
-    //     }
-    //   }
-    //   else if($(this).children('textarea')) {
-    //     var message = $(this).children('textarea');
-    //     if (message.val() == '') {
-    //       $(this).addClass('form-error');
-    //       error = true;
-    //     }
-    //   }
-    // });
 
   });
 
