@@ -19,7 +19,8 @@ var messages = {
 
 var jsIncludes = [
   'bower_components/jquery/dist/jquery.js',
-  'bower_components/Materialize/dist/materialize.js'
+  'bower_components/Materialize/dist/js/materialize.js',
+  '_js/app.js'
 ];
 
 
@@ -85,7 +86,7 @@ gulp.task('watch', function () {
   gulp.watch(['_sass/*.scss', 'css/*.scss'], ['sass']);
   gulp.watch(['*.md','*.html', '_layouts/*.html', '_posts/*', '_includes/*', '_portfolio/*', 'pages/*'], ['jekyll-rebuild']);
   gulp.watch(['assets/**/*.{jpg,png,gif}'], ['jekyll-rebuild']);
-  gulp.watch(['js/**/*.js'], ['scripts']).on('change', browserSync.reload);
+  gulp.watch(['_js/**/*.js'], ['scripts']).on('change', browserSync.reload);
 
 });
 

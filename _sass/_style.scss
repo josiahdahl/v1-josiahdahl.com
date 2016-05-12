@@ -1,68 +1,33 @@
-.site-header {
-  //background-color: $primary-color-dark;
-  padding: 2rem 0;
-  //color: #fff;
-  text-align: center;
-}
-.site-headercontent {
-  text-align: center;
-  justify-content:center;
-}
-.profile-image-wrapper {
-  text-align: center;
-}
-.site-headertext {
-  text-align: center;
-  width: 60%;
-  @media #{$medium-and-up} {
-    width: 40%;
-    margin-left: 2rem;
-  }
-}
-.site-header .profile-image {
-  border-radius: 50%;
-  height: 125px;
-  @media #{$medium-and-up} {
-    height: 200px;
-  }
+.page-content {
+  margin-top: 4rem;
 }
 
-.site-title {
-  font-size: 2rem;
-  margin: 0;
-  color: $off-black;
-  @media #{$medium-and-up} {
-    font-size: 3rem;
-  }
-}
-.site-subtitle {
-  margin: 0;
-  color: $primary-color-dark;
-  font-size: 1rem;
-  @media #{$medium-and-up} {
-    font-size: 2rem;
-  }
-}
+
 .section-header {
   font-size: 1.6rem;
   @media #{$medium-and-up} {
     font-size: 2.5rem;
   }
 }
+
 .projects-header {
   text-align: center;
   text-transform: uppercase;
 }
 
+.project-excerpt {
+}
 
 .card .project-title {
   margin-left: 1rem;
   margin-top: 1rem;
   display: block;
 }
+
 .card .project-tools {
   margin-top: 1rem;
 }
+
 .card .project-card {
   width: 100%;
   @media #{$large-and-up} {
@@ -70,6 +35,58 @@
     margin: 0 auto;
   }
 }
+
 .card .card-content {
   padding: 1rem;
+}
+
+* + .icon-container {
+  margin-top: 1rem;
+}
+.project-tools .chip {
+  margin: 0.3rem 0;
+}
+
+.icon {
+  > svg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 8px;
+
+    path {
+      fill: $primary-color-dark;
+    }
+  }
+}
+
+.icon--large {
+
+  > svg {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+  }
+}
+
+.contact-networks {
+  text-align: center;
+  margin-top: 3rem;
+  @media #{$medium-and-up} {
+    margin-top: 0;
+  }
+}
+
+.contact-networks_center {
+  text-align: left;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  color: #ccc;
+  font-size: 0.9rem;
 }

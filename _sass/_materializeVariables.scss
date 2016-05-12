@@ -37,7 +37,7 @@ $primary-color: color("blue-grey", "lighten-2") !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
 
-$secondary-color: color("teal", "lighten-1") !default;
+$secondary-color: color("light-blue", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("light-blue", "darken-1") !default;
@@ -215,7 +215,7 @@ $element-bottom-margin: ($gutter-width*2)/3 !default;
 
 $navbar-height: 64px !default;
 $navbar-height-mobile: 56px !default;
-$navbar-font-color: $off-black !default;
+$navbar-font-color: rgba(0, 0, 0, 0.87) !default;
 $navbar-brand-font-size: 2.1rem !default;
 
 

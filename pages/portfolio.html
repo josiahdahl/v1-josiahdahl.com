@@ -2,6 +2,7 @@
 layout: page
 title: Portfolio
 permalink: /portfolio/
+order: 2
 ---
 
 <div class="home">
@@ -19,11 +20,10 @@ permalink: /portfolio/
   <!--</ul>-->
   <div class="projects row">
     {% for project in site.portfolio %}
-    <div class="project col s12 m12 l6">
+    <div class="project col s12 m8 offset-m2 l6">
       <div class="project-card card">
         <a href="{{project.url | prepend: site.baseurl }}">
           <div class="portfolio-imagewrap">
-
             <div class="card-image">
               <img src="{{ '/assets/portfolio/card/' | prepend: site.baseurl | append: project.picture }} ">
             </div>
@@ -31,9 +31,9 @@ permalink: /portfolio/
           <span class="project-title card-title">{{ project.title }}</span>
         </a>
         <div class="project-excerpt card-content">
-          {{ project.excerpt }}
+          <span class="truncate">{{ project.excerpt }}</span>
           <div class="project-tools">
-            {% for tool in project.tools %}
+            {% for tool in project.tools limit: 3 %}
             <div class="chip">{{ tool }}</div>
             {% endfor %}
           </div>

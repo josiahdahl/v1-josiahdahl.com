@@ -1,0 +1,50 @@
+---
+layout: page
+title: Contact
+status: published
+type: post
+published: true
+order: 4
+permalink: /contact/
+---
+
+<div class="row">
+  <div class="col s12 m8 l6">
+    <h5>Send me a message...</h5>
+    <form id="contact" novalidate>
+      <div class="input-field">
+        <input type="text" id="name" class="validate">
+        <label for="name">
+          Name</label>
+      </div>
+
+      <div class="input-field">
+        <input type="email" id="email" class="validate">
+        <label for="email">
+          Email
+        </label>
+      </div>
+
+      <div class="input-field">
+            <textarea id="message" class="materialize-textarea">
+
+            </textarea>
+        <label for="message">
+          Message
+        </label>
+      </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+
+    </form>
+  </div>
+  <div class="col s12 m4 l6 contact-networks">
+    <h5 class="flow-text">... or reach me here</h5>
+    <div class="contact-networks_center">
+
+      <div class="icon-container">{% include icon-github.html username="josiahdahl" %}</div>
+      <div class="icon-container">{% include icon-linkedin.html username="josiahdahl" %}</div>
+    </div>
+  </div>
+</div>
