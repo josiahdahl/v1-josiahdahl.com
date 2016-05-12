@@ -12,27 +12,37 @@ permalink: /contact/
   <div class="col s12 m8 l6">
     <h5>Send me a message...</h5>
     <form id="contact" novalidate>
-      <div class="input-field">
-        <input type="text" id="name" class="validate">
+      <div class="input-field required">
+
+        <input type="text" id="name" name="name">
         <label for="name">
           Name</label>
+<span class="form-errortext">
+          What's your name?
+        </span>
       </div>
 
-      <div class="input-field">
-        <input type="email" id="email" class="validate">
+      <div class="input-field required">
+
+        <input type="email" id="email" name="email">
         <label for="email">
           Email
         </label>
+        <span class="form-errortext">
+          What's your email?
+        </span>
       </div>
 
-      <div class="input-field">
-            <textarea id="message" class="materialize-textarea">
-
-            </textarea>
+      <div class="input-field required">
+        <span class="form-errortext">
+          What can I do for you?
+        </span>
+            <textarea id="message" class="materialize-textarea" name="message"></textarea>
         <label for="message">
           Message
         </label>
       </div>
+      <input type="text" name="_gotcha" style="display:none" />
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
           <i class="material-icons right">send</i>
         </button>

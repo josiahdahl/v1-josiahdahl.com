@@ -12,6 +12,12 @@ var browserSync = require('browser-sync');
 var cp = require('child_process');
 var concat = require('gulp-concat');
 
+var gulpsync = require('gulp-sync')(gulp);
+var uglify = require('gulp-uglify');
+var nano = require('gulp-cssnano');
+var sourcemaps = require('gulp-sourcemaps');
+
+
 var jekyll   = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
   jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -37,7 +43,7 @@ gulp.task('jekyll-build', function (done) {
  * Rebuild Jekyll & do page reload
  */
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
-  browserSync.reload();
+  // browserSync.reload();
 });
 
 /**
@@ -63,6 +69,20 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest('./_site/js/'));
 });
 
+gulp.task('uglify', function() {
+  return gulp.src('_site/js/app.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('_site/js/'));
+});
+
+gulp.task('minify', function () {
+  return gulp.src('_site/css/main.css')
+    .pipe(sourcemaps.init())
+    .pipe(nano())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('_site/css/'));
+});
+
 
 
 /**
@@ -84,20 +104,20 @@ gulp.task('sass', function () {
  */
 gulp.task('watch', function () {
   gulp.watch(['_sass/*.scss', 'css/*.scss'], ['sass']);
-  gulp.watch(['*.md','*.html', '_layouts/*.html', '_posts/*', '_includes/*', '_portfolio/*', 'pages/*'], ['jekyll-rebuild']);
+  gulp.watch(['*.md','*.html', '_layouts/*.html', '_posts/*', '_includes/*', '_portfolio/*', 'pages/*'], ['jekyll-rebuild']).on('change', browserSync.reload);
   gulp.watch(['assets/**/*.{jpg,png,gif}'], ['jekyll-rebuild']);
   gulp.watch(['_js/**/*.js'], ['scripts']).on('change', browserSync.reload);
 
 });
 
-// /**
-//  * Watch for new images and minifiy them
-//  */
-// gulp.task('imagemin', function () {
-//   return gulp.src('assets/**/*.{jpg,png,gif}')
-//     .pipe(imagemin())
-//     .pipe(gulp.dest('_site/assets/'));
-// });
+/**
+ * Watch for new images and minifiy them
+ */
+gulp.task('imagemin', function () {
+  return gulp.src('_site/assets/**/*.{jpg,png,gif}')
+    .pipe(imagemin())
+    .pipe(gulp.dest('_site/assets/'));
+});
 
 
 
@@ -106,3 +126,6 @@ gulp.task('watch', function () {
  * compile the jekyll site, launch BrowserSync & watch files.
  */
 gulp.task('default', ['browser-sync', 'watch']);
+
+var buildTasks = ['sass', 'scripts', 'jekyll-build', 'imagemin', 'minify', 'uglify'];
+gulp.task('build', gulpsync.sync(buildTasks));

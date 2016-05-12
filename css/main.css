@@ -6542,13 +6542,28 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .contact-networks_center {
   text-align: left;
   width: 200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin-top: 2rem; }
 
 .site-footer {
   text-align: center;
   padding: 2rem;
   color: #ccc;
   font-size: 0.9rem; }
+
+.form-errortext {
+  display: none; }
+
+.form-error {
+  color: #F44336 !important; }
+  .form-error input,
+  .form-error textarea {
+    border-bottom-color: #F44336 !important; }
+  .form-error .form-errortext {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0.8rem; }
 
 .portfolio-title {
   font-size: 1.8rem; }

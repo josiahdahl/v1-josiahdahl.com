@@ -82,6 +82,7 @@
   text-align: left;
   width: 200px;
   margin: 0 auto;
+  margin-top: 2rem;
 }
 
 .site-footer {
@@ -89,4 +90,22 @@
   padding: 2rem;
   color: #ccc;
   font-size: 0.9rem;
+}
+.form-errortext {
+  display: none;
+}
+.form-error {
+  color: $error-color !important;
+
+  input,
+  textarea {
+    border-bottom-color: $error-color !important;
+  }
+  .form-errortext {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0.8rem;
+  }
+
 }
