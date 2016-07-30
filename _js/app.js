@@ -59,7 +59,7 @@ $(document).ready(function () {
     });
     if (!error) {
       $.ajax({
-        url: "https://formspree.io/josiah@josiahdahl.com",
+        url: "https://formspree.io/josiahdahl+contact@gmail.com",
         method: "POST",
         data: $(this).serializeArray(),
         dataType: "json"

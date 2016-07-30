@@ -16821,7 +16821,7 @@ $(document).ready(function () {
     });
     if (!error) {
       $.ajax({
-        url: "https://formspree.io/josiah.dahl+contact@gmail.com",
+        url: "https://formspree.io/josiahdahl+contact@gmail.com",
         method: "POST",
         data: $(this).serializeArray(),
         dataType: "json"
