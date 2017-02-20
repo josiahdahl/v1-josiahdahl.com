@@ -1,41 +1,49 @@
 <div class="site-header">
-  <div class="site-nav site-nav_top">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" data-activates="mobile-menu" class="button-collapse nav-menu"><i class="material-icons">menu</i></a>
-        {% assign sorted_pages = site.html_pages | sort:"order" %}
-        <ul class="right hide-on-med-and-down">
-          {% for link in sorted_pages %}
-          {% if page.url == link.url %}
-          <li class="active"><a href="{{ link.url | prepend: site.baseurl }}">{{link.title}}</a></li>
-          {% else %}
-          <li><a href="{{ link.url | prepend: site.baseurl }}">{{link.title}}</a></li>
-          {% endif %}
-          {% endfor %}
-        </ul>
-        <ul class="side-nav" id="mobile-menu">
-          {% for link in sorted_pages %}
-            {% if page.url == link.url %}
-            <li class="active"><a href="{{ link.url | prepend: site.baseurl }}">{{link.title}}</a></li>
-            {% else %}
-            <li><a href="{{ link.url | prepend: site.baseurl }}">{{link.title}}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <header>
-
-    <div class="site-headercontent">
-      <a href="{{ '/' | prepend: site.baseurl }}">
-        <img src="{{ '/assets/images/headshot.jpg' | prepend: site.baseurl }}" class="profile-image">
-        <div class="site-headertext">
-          <h1 class="site-title">Josiah Dahl</h1>
-          <h5 class="site-subtitle">Web Developer</h5>
-        </div>
-      </a>
-
+    <div class="site-nav site-nav_top">
+        <nav>
+            <div class="nav-wrapper">
+                <div class="brand hide-on-med-and-up" href="{{ '/' | prepend: site.baseurl }}">
+                    <img src="{{ '/assets/images/headshot.jpg' | prepend: site.baseurl }}" class="profile-image">
+                    <div class="brand__title">
+                        <h1 class="site-title">Josiah Dahl</h1>
+                        <p class="site-subtitle">Web Developer</p>
+                    </div>
+                </div>
+                <a href="#" data-activates="mobile-menu" class="button-collapse nav-menu right"><i
+                        class="material-icons">menu</i></a>
+                {% assign sorted_pages = site.html_pages | sort:"order" %}
+                <ul class="right hide-on-med-and-down">
+                    {% for link in sorted_pages %}
+                    {% if page.url == link.url %}
+                    <li class="active"><a href="{{ link.url | prepend: site.baseurl }}">{{link.title}}</a></li>
+                    {% else %}
+                    <li><a href="{{ link.url | prepend: site.baseurl }}">{{link.title}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+                <ul class="side-nav right-aligned" id="mobile-menu">
+                    {% for link in sorted_pages %}
+                    {% if page.url == link.url %}
+                    <li class="active"><a href="{{ link.url | prepend: site.baseurl }}">{{link.title}}</a></li>
+                    {% else %}
+                    <li><a href="{{ link.url | prepend: site.baseurl }}">{{link.title}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
     </div>
-  </header>
+    <header>
+
+        <div class="site-headercontent hide-on-small-and-down">
+            <a href="{{ '/' | prepend: site.baseurl }}">
+                <img src="{{ '/assets/images/headshot.jpg' | prepend: site.baseurl }}" class="profile-image">
+                <div class="site-headertext">
+                    <h1 class="site-title">Josiah Dahl</h1>
+                    <h5 class="site-subtitle">Web Developer</h5>
+                </div>
+            </a>
+
+        </div>
+    </header>
 </div>

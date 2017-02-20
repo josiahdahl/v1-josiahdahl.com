@@ -93,3 +93,31 @@ ul.side-nav {
     font-size: 2rem;
   }
 }
+
+.brand {
+  display: inline-block;
+  padding: .5rem;
+  height: 100%;
+
+  .profile-image {
+    display: inline-block;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .brand__title {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+  .site-title {
+    display: block;
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  .site-subtitle {
+    display: block;
+    font-size: 1rem;
+    line-height: .8;
+  }
+
+}

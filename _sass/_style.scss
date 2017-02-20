@@ -1,5 +1,8 @@
 .page-content {
-  margin-top: 4rem;
+  margin-top: 2rem;
+  @media #{$medium-and-up} {
+    margin-top: 4rem;
+  }
 }
 
 

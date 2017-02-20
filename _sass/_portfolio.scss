@@ -4,6 +4,16 @@
     font-size: 2.5rem;
   }
 }
+.portfolio-technology {
+  box-shadow: none;
+  border: none;
+  max-width: 400px;
+  .collapsible-body {
+    padding: 0.7rem .5rem .5rem .5rem;
+    border: none;
+  }
+}
+
 .portfolio-links {
   text-align: center;
 }
@@ -44,13 +54,9 @@
 
 .portfolio-techlistitem {
   display: inline-block;
-  font-size: 1rem;
+  font-size: .7rem;
   text-transform: uppercase;
-  margin-left: 0.5rem;
   color: $primary-color-dark;
 
 }
 
-.portfolio-techlistitem + .portfolio-techlistitem {
-  margin-left: 1rem;
-}

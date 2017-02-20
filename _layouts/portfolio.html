@@ -3,24 +3,30 @@ layout: default
 ---
 <article class="portfolio container">
 
-  <header class="portfolio-header">
-    <h3 class="portfolio-title">{{ page.title }}</h3>
-    <ul class="portfolio-techlist">
-      {% for tool in page.tools %}
-      <li class="portfolio-techlistitem">{{ tool }}</li>
-      {% endfor %}
-    </ul>
+    <header class="portfolio-header">
+        <h2 class="portfolio-title">{{ page.title }}</h2>
+        <ul class="collapsible portfolio-technology" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header"><i class="material-icons">code</i>Technologies</div>
+                <div class="collapsible-body">
+                    <ul class="portfolio-techlist">
+                        {% for tool in page.tools %}
+                        <li class="portfolio-techlistitem chip">{{ tool }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </li>
+        </ul>
+            <img class="portfolio-image " src="{{site.baseurl}}/assets/portfolio/page/{{page.picture}}">
+            <div class="portfolio-links">
+                <a href="{{page.siteurl}}" target="_blank" class="portfolio-link">Visit</a>
+                <a href="{{page.github}}" target="_blank" class="portfolio-link">View on Github</a>
 
-      <img class="portfolio-image " src="{{site.baseurl}}/assets/portfolio/page/{{page.picture}}">
-    <div class="portfolio-links">
-      <div class="portfolio-link"><a href="{{page.siteurl}}">Visit</a></div>
-      <div class="portfolio-link"><a href="{{page.github}}">View on Github</a></div>
+            </div>
+    </header>
 
+    <div class="portfolio-content">
+        {{ content }}
     </div>
-  </header>
-
-  <div class="portfolio-content">
-    {{ content }}
-  </div>
 
 </article>
