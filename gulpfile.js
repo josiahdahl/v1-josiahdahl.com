@@ -17,6 +17,9 @@ var uglify = require('gulp-uglify');
 var nano = require('gulp-cssnano');
 var sourcemaps = require('gulp-sourcemaps');
 
+var rsync = require('gulp-rsync');
+var config = require('./_config.json');
+
 
 var jekyll = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 var messages = {
@@ -125,6 +128,14 @@ gulp.task('imagemin', function () {
         .pipe(gulp.dest('_site/assets/'));
 });
 
+/**
+ * Deploy to server
+ */
+
+gulp.task('upload', function () {
+    return gulp.src(config.rsync.src)
+        .pipe(rsync(config.rsync.options))
+})
 
 /**
  * Default task, running just `gulp` will compile the sass,
