@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Portfolio
-permalink: /portfolio/
+title: Projects
+permalink: /projects/
 order: 2
 ---
 
@@ -40,8 +40,10 @@ order: 2
         </div>
         <div class="card-action">
           <a href="{{project.url | prepend: site.baseurl }}">More Info</a>
-          <a href="{{project.github}}">Github</a>
-          <a href="{{project.siteurl}}">Visit</a>
+          {% if project.github %}
+          <a href="{{project.github}}" target="_blank">Github</a>
+          {% endif %}
+          <a href="{{project.siteurl}}" target="_blank">Visit</a>
 
         </div>
 

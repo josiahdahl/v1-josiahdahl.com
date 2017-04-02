@@ -18,6 +18,7 @@ $(document).ready(function () {
         headerHeight = header.height();
     });
     // Fade the header image into the nav bar as we scroll past it
+  // TODO: Debounce the scroll event
     window.addEventListener('scroll', function (e) {
         // Get header div hieght from top
         var offset = $(window).scrollTop();
@@ -37,7 +38,6 @@ $(document).ready(function () {
 
     // handle form validation
     $('#contact').on('submit', function (e) {
-        console.log('checksubmitted');
         e.preventDefault();
         var error = false;
 

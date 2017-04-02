@@ -58,7 +58,8 @@ gulp.task('browser-sync', ['sass', 'scripts', 'jekyll-build'], function () {
         server: {
             baseDir: '_site'
         },
-        open: false
+        open: false,
+        notify: false,
     });
 });
 

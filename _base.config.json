@@ -1,0 +1,23 @@
+{
+  "rsync": {
+    "src": "_site/**",
+    "options": {
+      "dryrun": false,
+      "root": "dist/",
+      "destination": "",
+      "hostname": "",
+      "username": "",
+      "incremental": true,
+      "progress": true,
+      "relative": true,
+      "emptyDirectories": true,
+      "update": true,
+      "recursive": true,
+      "clean": false,
+      "exclude": [
+        ".DS_Store"
+      ],
+      "include": []
+    }
+  }
+}
