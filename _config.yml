@@ -13,7 +13,7 @@ description: > # this means to ignore newlines until "baseurl:"
   The portfolio of Josiah Dahl. Web developer. Canadian, but living in America. I love a challenge and I love to
   learn new things!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.josiahdahl.com" # the base hostname & protocol for your site
+url: "https://www.josiahdahl.com" # the base hostname & protocol for your site
 #twitter_username: jekyllrb
 github_username:  josiahdahl
 bitbucket_username: jodahl
